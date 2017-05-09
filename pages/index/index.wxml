@@ -1,0 +1,24 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">二手房交易计税系统</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">温馨提示：</view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          本程序适用于广东省韶关市二手房交易的涉税计算。离婚析产、继承、赠予、转让房改房、集资房、拆迁房、自建房的，暂不做计算，有需要请自行咨询当地税务机关。
+        </view>
+        <view class="weui-article__p">
+          本程序系解读税收政策法规设计而成，会因提供数据的准确度、政策的变更或理解的差异，可能引起计算结果偏差。
+        </view>
+        <view class="weui-article__p">
+          本程序计算结果仅供参考，税务机关可能会根据您最终提供的资料重新计税。
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary" bindtap="calc">开始计算</button>
+  </view>
+</view>

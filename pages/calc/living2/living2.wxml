@@ -1,0 +1,58 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<form bindsubmit="livingNext">
+  <view class="page__bd">
+
+    <view class="weui-cells__title">转让的房子取得的发票上开票时间和金额是？</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
+            <view class="weui-input">{{fp_date}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">金额</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">以下为选填项</view>
+    <view class="weui-cells__title">房屋按揭贷款时已还银行利息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="lx_je" type="digit" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">房子装修费的发票金额</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="zx_je" type="digit" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">委托中介转让的中介费发票金额</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="zj_je" type="digit" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title"> </view>
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn" formType="submit" type="primary">{{step}}</button>
+    </view>
+  </view>
+  </form>
+</view>

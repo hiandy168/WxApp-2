@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/calc/normal/normal",
+    "pages/calc/living/living",
+    "pages/calc/living2/living2",
+    "pages/calc/noliving/noliving",
+    "pages/calc/result/result"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我是二手房交易计税系统",
+    "navigationBarTextStyle":"black"
+  }
+}

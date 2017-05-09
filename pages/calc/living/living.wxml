@@ -1,0 +1,100 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<form bindsubmit="livingNext">
+  <view class="page__bd">
+    <view class="weui-cells__title">转让房子的房产证上，核准发证的时间是？</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{fcz_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFczDateChange">
+            <view class="weui-input">{{fcz_date}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">房屋契税完税证上的开票时间和税款金额是？</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{qs_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindQsDateChange">
+            <view class="weui-input">{{qs_date}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">金额</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="qs_je" type="digit" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">这套房屋对于卖方来说，是家庭唯一住房吗（说明：这里的家庭，是指成员范围包括购房人、配偶以及未成年子女）</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioSellerChange" name="seller_only">
+        <label class="weui-cell weui-check__label" wx:for="{{radioSellerItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="weui-cells__title">这套房屋对于购买方来说，是家庭唯一住房吗（说明：这里的家庭，是指成员范围包括购房人、配偶以及未成年子女）</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioBuyerChange" name="buyer_only">
+        <label class="weui-cell weui-check__label" wx:for="{{radioBuyerItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="weui-cells__title">转让房子的建筑面积是？</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioSizeChange" name="small_house">
+        <label class="weui-cell weui-check__label" wx:for="{{radioSizeItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="weui-cells__title">房屋交易价格是？</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="jy_je" type="digit" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">转让的价格是否包含税费？</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioTaxedChange" name="taxed">
+        <label class="weui-cell weui-check__label" wx:for="{{radioTaxedItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="weui-cells__title"> </view>
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn" formType="submit" type="primary">{{step}}</button>
+    </view>
+  </view>
+  </form>
+</view>
