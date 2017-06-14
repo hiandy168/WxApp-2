@@ -10,7 +10,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "rgb(103,94,153)",
+    "navigationBarBackgroundColor": "#3188D8",
     "navigationBarTitleText": "韶关二手房交易计税系统",
     "navigationBarTextStyle":"light"
   },
@@ -18,7 +18,7 @@
     "position": "bottom",
     "borderStyle": "white",
     "backgroundColor": "#f8f8f8",
-    "selectedColor": "#695f9b",
+    "selectedColor": "#3188D8",
     "list": [
       {
         "pagePath": "pages/index/index",

@@ -14,6 +14,13 @@ Page({
     seller_one: 0,
     sgs: 0,
 
+    di: 0,
+    li: 0,
+    radioDistrictItems: [
+      { name: '市区', value: '0', checked: true },
+      { name: '县城或乡镇', value: '1' }
+    ],
+
     radioSellerItems: [
       { name: '是', value: '0', checked: true },
       { name: '不是', value: '1' }
@@ -28,9 +35,23 @@ Page({
       { name: '大于90平方米', value: '1' }
     ],
     radioTaxedItems: [
-      { name: '一口价转让，过户税费包含在内', value: '0', checked: true },
-      { name: '转让不包税费，税费另外协商', value: '1' }
+      { name: '转让包税费', value: '0', checked: true },
+      { name: '转让不包税费', value: '1' }
     ],
+  },
+  radioDistrictChange: function (e) {
+    console.log('di发生change事件，携带值为：', e.detail.value);
+
+    this.setData({ di: e.detail.value });
+
+    var radioDistrictItems = this.data.radioDistrictItems;
+    for (var i = 0, len = radioDistrictItems.length; i < len; ++i) {
+      radioDistrictItems[i].checked = radioDistrictItems[i].value == e.detail.value;
+    }
+
+    this.setData({
+      radioDistrictItems: radioDistrictItems
+    });
   },
   bindFczDateChange: function (e) {
     if (this.data.seller_one == 0 && util.moreThanXYears(util.preDate(this.data.qs_date, e.detail.value), 5)) {

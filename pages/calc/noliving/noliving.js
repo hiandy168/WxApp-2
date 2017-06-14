@@ -14,6 +14,12 @@ Page({
     qs_date: "2016-09-01",
     fp_date: "2016-09-01",
 
+    di: 0,
+    li: 1,
+    radioDistrictItems: [
+      { name: '市区', value: '0', checked: true },
+      { name: '县城或乡镇', value: '1' }
+    ],
 
     radioSizeItems: [
       { name: '小于或等于90平方米', value: '0', checked: true },
@@ -23,6 +29,20 @@ Page({
       { name: '要求买家承担', value: '0', checked: true },
       { name: '卖家自己承担', value: '1' }
     ],
+  },
+  radioDistrictChange: function (e) {
+    console.log('di发生change事件，携带值为：', e.detail.value);
+
+    this.setData({ di: e.detail.value });
+
+    var radioDistrictItems = this.data.radioDistrictItems;
+    for (var i = 0, len = radioDistrictItems.length; i < len; ++i) {
+      radioDistrictItems[i].checked = radioDistrictItems[i].value == e.detail.value;
+    }
+
+    this.setData({
+      radioDistrictItems: radioDistrictItems
+    });
   },
   bindFczDateChange: function (e) {
     this.setData({

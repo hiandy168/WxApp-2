@@ -1,110 +1,154 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-<form bindsubmit="livingNext">
-  <view class="page__bd">
-    <view class="weui-cells__title">转让房子的房产证上，核准发证的时间是？</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">日期</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker mode="date" value="{{fcz_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFczDateChange">
-            <view class="weui-input">{{fcz_date}}</view>
-          </picker>
-        </view>
+  <form bindsubmit="livingNext">
+    <view class="page__bd">
+      <view class="weui-cells__title">转让的房屋坐落在</view>
+      <view class="">
+        <radio-group class="radio-group" bindchange="radioDistrictChange">
+          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioDistrictItems}}" wx:key="value">
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+          </label>
+        </radio-group>
       </view>
-    </view>
-    <view class="weui-cells__title">转让的房子取得时的契税完税证上的开出时间和税款金额是？</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">日期</view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker mode="date" value="{{qs_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindQsDateChange">
-            <view class="weui-input">{{qs_date}}</view>
-          </picker>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">金额</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="qs_je" type="digit" placeholder="请输入金额" />
-        </view>
-      </view>
-    </view>
-    <view class="weui-cells__title">转让协议是否要求买家承担转让的税费？</view>
-    <view class="weui-cells weui-cells_after-title">
-      <radio-group bindchange="radioTaxedChange" name="taxed">
-        <label class="weui-cell weui-check__label" wx:for="{{radioTaxedItems}}" wx:key="value">
-          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
-          <view class="weui-cell__bd">{{item.name}}</view>
-          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
-            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+      <view class="weui-cells__title">转让房子的房产证上，核准发证的时间是？</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/Calendar-icon.png"></image>
+              <text>日期</text>
+            </view>
           </view>
-        </label>
-      </radio-group>
-    </view>
-    <view class="weui-cells__title">房屋交易价格是？</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="jy_je" type="digit" placeholder="请输入金额" />
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{fcz_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFczDateChange">
+              <view class="weui-input">{{fcz_date}}</view>
+            </picker>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="weui-cells__title">转让的房子取得的发票上开票时间和金额是？</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">日期</view>
+      <view class="weui-cells__title">转让的房子取得时的契税完税证上的开出时间和税款金额是？</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/Calendar-icon.png"></image>
+              <text>日期</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{qs_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindQsDateChange">
+              <view class="weui-input">{{qs_date}}</view>
+            </picker>
+          </view>
         </view>
-        <view class="weui-cell__bd">
-          <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
-            <view class="weui-input">{{fp_date}}</view>
-          </picker>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">金额</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />
-        </view>
-      </view>
-    </view>
-    <view class="weui-cells__title">以下为选填项</view>
-    <view class="weui-cells__title">房屋按揭代开的已还银行利息</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="lx_je" type="digit" placeholder="请输入金额" />
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="qs_je" type="digit" placeholder="请输入金额" />
+          </view>
         </view>
       </view>
-    </view>
-    <view class="weui-cells__title">房子装修费的发票金额</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="zx_je" type="digit" placeholder="请输入金额" />
+      <view class="weui-cells__title">转让协议是否要求买家承担转让的税费？</view>
+      <view class="">
+        <radio-group class="radio-group" bindchange="radioTaxedChange" name="taxed">
+          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioTaxedItems}}" wx:key="value">
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+
+          </label>
+        </radio-group>
+      </view>
+      <view class="weui-cells__title">房屋交易价格是？</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="jy_je" type="digit" placeholder="请输入金额" />
+          </view>
         </view>
       </view>
-    </view>
-    <view class="weui-cells__title">委托中介转让的中介费发票金额</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-          <input class="weui-input" name="zj_je" type="digit" placeholder="请输入金额" />
+      <view class="weui-cells__title">转让的房子取得的发票上开票时间和金额是？</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/Calendar-icon.png"></image>
+              <text>日期</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
+              <view class="weui-input">{{fp_date}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />
+          </view>
         </view>
       </view>
+      <view class="weui-cells__title">以下为选填项</view>
+      <view class="weui-cells__title">房屋按揭代开的已还银行利息</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="lx_je" type="digit" placeholder="请输入金额" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">房子装修费的发票金额</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="zx_je" type="digit" placeholder="请输入金额" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">委托中介转让的中介费发票金额</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="zj_je" type="digit" placeholder="请输入金额" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title"> </view>
+      <view class="page__bd page__bd_spacing">
+        <button class="weui-btn" formType="submit" type="primary">{{step}}</button>
+      </view>
     </view>
-    <view class="weui-cells__title"> </view>
-    <view class="page__bd page__bd_spacing">
-      <button class="weui-btn" formType="submit" type="primary">{{step}}</button>
-    </view>
-  </view>
   </form>
 </view>

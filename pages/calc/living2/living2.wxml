@@ -6,7 +6,9 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-          <view class="weui-label">日期</view>
+          <view class="weui-label">
+              <image class="label-icon" src="/images/Calendar-icon.png"></image>
+              <text>日期</text></view>
         </view>
         <view class="weui-cell__bd">
           <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
@@ -16,7 +18,9 @@
       </view>
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-          <view class="weui-label">金额</view>
+          <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text></view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />
@@ -27,6 +31,11 @@
     <view class="weui-cells__title">房屋按揭贷款时已还银行利息</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text></view>
+          </view>
         <view class="weui-cell__bd">
           <input class="weui-input" name="lx_je" type="digit" placeholder="请输入金额" />
         </view>
@@ -35,6 +44,11 @@
     <view class="weui-cells__title">房子装修费的发票金额</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text></view>
+          </view>
         <view class="weui-cell__bd">
           <input class="weui-input" name="zx_je" type="digit" placeholder="请输入金额" />
         </view>
@@ -43,6 +57,11 @@
     <view class="weui-cells__title">委托中介转让的中介费发票金额</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>金额</text></view>
+          </view>
         <view class="weui-cell__bd">
           <input class="weui-input" name="zj_je" type="digit" placeholder="请输入金额" />
         </view>

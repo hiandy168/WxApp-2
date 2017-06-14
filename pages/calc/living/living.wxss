@@ -1,1 +1,7 @@
 /* pages/calc/living/living.wxss */
+.weui-btn {
+  background:gray;
+}
+button.wui-btn{
+  background:red;
+}
