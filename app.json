@@ -10,8 +10,34 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我是二手房交易计税系统",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "rgb(103,94,153)",
+    "navigationBarTitleText": "韶关二手房交易计税系统",
+    "navigationBarTextStyle":"light"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "backgroundColor": "#f8f8f8",
+    "selectedColor": "#695f9b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "介绍",
+        "iconPath": "images/introduce.png",
+        "selectedIconPath": "images/introduceClick.png"
+      },
+      {
+        "pagePath": "pages/calc/living/living",
+        "text": "住宅",
+        "iconPath": "images/loan.png",
+        "selectedIconPath": "images/loanClick.png"
+      },
+      {
+        "pagePath": "pages/calc/noliving/noliving",
+        "text": "非住宅",
+        "iconPath": "images/person.png",
+        "selectedIconPath": "images/personClick.png"
+      }
+    ]
   }
 }
