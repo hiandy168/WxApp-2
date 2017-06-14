@@ -70,7 +70,7 @@
 
     <view class="weui-cells__title"> </view>
     <view class="page__bd page__bd_spacing">
-      <button class="weui-btn" formType="submit" type="primary">{{step}}</button>
+      <button class="weui-btn" formType="submit">{{step}}</button>
     </view>
   </view>
   </form>

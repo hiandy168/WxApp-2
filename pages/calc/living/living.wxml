@@ -101,8 +101,8 @@
         </radio-group>
       </view>
       <view class="weui-cells__title"> </view>
-      <view class="page__bd page__bd_spacing button-height">
-        <button class="weui-btn" formType="submit" type="primary">{{step}}</button>
+      <view class="page__bd page__bd_spacing space-height">
+        <button class="weui-btn" formType="submit" >{{step}}</button>
       </view>
     </view>
   </form>

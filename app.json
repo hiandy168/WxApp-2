@@ -29,14 +29,14 @@
       {
         "pagePath": "pages/calc/living/living",
         "text": "住宅",
-        "iconPath": "images/loan.png",
-        "selectedIconPath": "images/loanClick.png"
+        "iconPath": "images/living.png",
+        "selectedIconPath": "images/livingClick.png"
       },
       {
         "pagePath": "pages/calc/noliving/noliving",
         "text": "非住宅",
-        "iconPath": "images/person.png",
-        "selectedIconPath": "images/personClick.png"
+        "iconPath": "images/noliving.png",
+        "selectedIconPath": "images/nolivingClick.png"
       }
     ]
   }
