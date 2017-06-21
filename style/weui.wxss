@@ -34,7 +34,7 @@ icon {
 }
 .weui-cells__title {
   margin-top: 2em;
-  margin-bottom: .3em;
+  margin-bottom: 0;
   padding-left: 15px;
   padding-right: 15px;
   color: #000;
@@ -286,7 +286,7 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  color: #3188D8;
+  color: #81D8CE;
   text-align: center;
 }
 .weui-form-preview__btn:after {
@@ -310,7 +310,7 @@ icon {
   background-color: #EEEEEE;
 }
 .weui-form-preview__btn_primary {
-  color: #3188D8;
+  color: #81D8CE;
   background-color: #EEEEEE;
 }
 .weui-cell_select {
@@ -366,11 +366,11 @@ icon {
   line-height: 2.58823529em;
   vertical-align: middle;
   font-size: 17px;
-  color: #3188D8;
+  color: #81D8CE;
   white-space: nowrap;
 }
 .weui-vcode-btn:active {
-  color: #3188D8;
+  color: #81D8CE;
 }
 .weui-cell_switch {
   padding-top: 6px;
@@ -549,7 +549,7 @@ icon {
 }
 .weui-btn {
   margin-top: 15px;
-  background-color: #3188D8;
+  background-color: #81D8CE;
   color: #FFFFFF;
 }
 .weui-btn:first-child {
@@ -932,7 +932,7 @@ icon {
   font-size: 0;
 }
 .weui-navbar__item.weui-bar__item_on {
-  color: #3188D8;
+  color: #81D8CE;
 }
 .weui-navbar__slider {
   position: absolute;
@@ -941,7 +941,7 @@ icon {
   bottom: 0;
   width: 6em;
   height: 3px;
-  background-color: #3188D8;
+  background-color: #81D8CE;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -1038,40 +1038,41 @@ icon {
 .weui-search-bar__cancel-btn {
   margin-left: 10px;
   line-height: 28px;
-  color: #3188D8;
+  color: #81D8CE;
   white-space: nowrap;
 }
 
 .label-icon{
     width: 30rpx;
     height: 30rpx;
+    margin-left: 12rpx;
     margin-right: 12rpx;
     margin-bottom: 6rpx;
     vertical-align: text-bottom;
 }
 
 .radio-group{
-  margin-top: 1em;
+  margin-top: 0.2em;
     position: relative;
     display: flex;
     width: 100%;
     height: 70rpx;
-    color:#51ABE7;
+    color:#81D8CE;
 }
 .radio{
     display: inline-block;
     flex: 1;
     height: 100%;
-    border-color: #51ABE7;
+    border-color: #81D8CE;
     border-width: 1rpx 1rpx 1rpx 0;
     border-style: solid;
     box-sizing: border-box;
-    color: #51ABE7;
+    color: #81D8CE;
     text-align: center;
     line-height: 70rpx;
 }
 .radio:first-child{
-    border-left: 1px solid #51ABE7;
+    border-left: 1px solid #81D8CE;
     border-top-left-radius: 8rpx;
     border-bottom-left-radius: 8rpx;
     
@@ -1089,7 +1090,7 @@ icon {
     visibility: hidden;
 }
 .active{
-    background-color: #51ABE7;
+    background-color: #81D8CE;
     color: #fff;
     transition: all .3s;
 }

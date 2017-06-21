@@ -1,7 +1,7 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
   <form bindsubmit="livingNext">
     <view class="page__bd">
-      <view class="weui-cells__title">转让的房屋坐落在</view>
+      <view class="weui-cells__title">转让的不动产在</view>
       <view class="">
         <radio-group class="radio-group" bindchange="radioDistrictChange">
           <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioDistrictItems}}" wx:key="value">
@@ -9,7 +9,7 @@
           </label>
         </radio-group>
       </view>
-      <view class="weui-cells__title">转让房子的房产证上，核准发证的时间是？</view>
+      <view class="weui-cells__title">房产证上发证日期是</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
@@ -25,13 +25,13 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">转让的房子取得时的契税完税证上的开出时间和税款金额是？</view>
+      <view class="weui-cells__title">契税税票上</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
             <view class="weui-label">
               <image class="label-icon" src="/images/Calendar-icon.png"></image>
-              <text>日期</text>
+              <text>开票日期</text>
             </view>
           </view>
           <view class="weui-cell__bd">
@@ -44,7 +44,7 @@
           <view class="weui-cell__hd">
             <view class="weui-label">
               <image class="label-icon" src="/images/dollar-icon.png"></image>
-              <text>金额</text>
+              <text>契税金额</text>
             </view>
           </view>
           <view class="weui-cell__bd">
@@ -52,16 +52,34 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">转让协议是否要求买家承担转让的税费？</view>
-      <view class="">
-        <radio-group class="radio-group" bindchange="radioTaxedChange" name="taxed">
-          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioTaxedItems}}" wx:key="value">
-            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
-
-          </label>
-        </radio-group>
+      <view class="weui-cells__title">不动产发票上</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/Calendar-icon.png"></image>
+              <text>开票日期</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
+              <view class="weui-input">{{fp_date}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">
+              <image class="label-icon" src="/images/dollar-icon.png"></image>
+              <text>发票金额</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />
+          </view>
+        </view>
       </view>
-      <view class="weui-cells__title">房屋交易价格是？</view>
+      <view class="weui-cells__title">转让交易金额</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
@@ -75,35 +93,17 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">转让的房子取得的发票上开票时间和金额是？</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">
-              <image class="label-icon" src="/images/Calendar-icon.png"></image>
-              <text>日期</text>
-            </view>
-          </view>
-          <view class="weui-cell__bd">
-            <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
-              <view class="weui-input">{{fp_date}}</view>
-            </picker>
-          </view>
-        </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">
-              <image class="label-icon" src="/images/dollar-icon.png"></image>
-              <text>金额</text>
-            </view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />
-          </view>
-        </view>
+      <view class="weui-cells__title">交易价格是否包转让税费？</view>
+      <view class="">
+        <radio-group class="radio-group" bindchange="radioTaxedChange" name="taxed">
+          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioTaxedItems}}" wx:key="value">
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+
+          </label>
+        </radio-group>
       </view>
       <view class="weui-cells__title">以下为选填项</view>
-      <view class="weui-cells__title">房屋按揭代开的已还银行利息</view>
+      <view class="weui-cells__title">不动产按揭已还银行利息</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">

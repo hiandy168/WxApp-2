@@ -7,7 +7,7 @@ Page({
     "qs_je", "jy_je", "taxed",
     "fp_date", "fp_je", "lx_je", "zx_je", "zj_je"],
     
-    step: "完成",
+    step: "计税",
     url: "../result/result",
 
     fcz_date: "2016-09-01",
@@ -26,8 +26,8 @@ Page({
       { name: '大于90平方米', value: '1' }
     ],
     radioTaxedItems: [
-      { name: '要求买家承担', value: '0', checked: true },
-      { name: '卖家自己承担', value: '1' }
+      { name: '包', value: '0', checked: true },
+      { name: '不包', value: '1' }
     ],
   },
   radioDistrictChange: function (e) {

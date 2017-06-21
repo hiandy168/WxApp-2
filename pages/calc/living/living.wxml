@@ -1,16 +1,43 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
   <form bindsubmit="livingNext">
     <view class="page__bd">
-      <view class="weui-cells__title">转让的房屋坐落在</view>
+      <view class="weui-cells__title">转让的房屋在</view>
       <view class="">
         <radio-group class="radio-group" bindchange="radioDistrictChange">
           <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioDistrictItems}}" wx:key="value">
-            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" />
-            {{item.name}}
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
           </label>
         </radio-group>
       </view>
-      <view class="weui-cells__title">转让房子的房产证上，核准发证的时间是？</view>
+      <view class="weui-cells__title">房屋的建筑面积是？</view>
+      <view class="">
+        <radio-group class="radio-group" bindchange="radioSizeChange" name="small_house">
+          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioSizeItems}}" wx:key="value">
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+          </label>
+        </radio-group>
+      </view>
+      <view class="weui-cells__title"><text>是否卖家家庭唯一住房</text><image class="label-icon" src="/images/Tips-icon.png" bindtap="onlytips"></image></view>
+      <modal hidden="{{hidden}}" title="说明" confirm-text="确定" bindconfirm="confirm" no-cancel="true">
+   <text>这里的家庭，是指成员范围包括购房人、配偶以及未成年子女</text>
+</modal>
+      <view class="">
+        <radio-group class="radio-group" bindchange="radioSellerChange" name="seller_only">
+          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioSellerItems}}" wx:key="value">
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+
+          </label>
+        </radio-group>
+      </view>
+      <view class="weui-cells__title"><text>是否买家家庭唯一住房</text><image class="label-icon" src="/images/Tips-icon.png" bindtap="onlytips"></image></view>
+      <view class="">
+        <radio-group class="radio-group" bindchange="radioBuyerChange" name="buyer_only">
+          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioBuyerItems}}" wx:key="value">
+            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+          </label>
+        </radio-group>
+      </view>
+      <view class="weui-cells__title">房产证上发证时间是</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
@@ -26,13 +53,13 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">房屋契税完税证上的开票时间和税款金额是？</view>
+      <view class="weui-cells__title">房屋契税税票上</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
             <view class="weui-label">
               <image class="label-icon" src="/images/Calendar-icon.png"></image>
-              <text>日期</text>
+              <text>开票日期</text>
             </view>
           </view>
           <view class="weui-cell__bd">
@@ -45,7 +72,7 @@
           <view class="weui-cell__hd">
             <view class="weui-label">
               <image class="label-icon" src="/images/dollar-icon.png"></image>
-              <text>金额</text>
+              <text>契税金额</text>
             </view>
           </view>
           <view class="weui-cell__bd">
@@ -53,32 +80,9 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">这套房屋对于卖方来说，是家庭唯一住房吗（说明：这里的家庭，是指成员范围包括购房人、配偶以及未成年子女）</view>
-      <view class="">
-        <radio-group class="radio-group" bindchange="radioSellerChange" name="seller_only">
-          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioSellerItems}}" wx:key="value">
-            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
-
-          </label>
-        </radio-group>
-      </view>
-      <view class="weui-cells__title">这套房屋对于购买方来说，是家庭唯一住房吗（说明：这里的家庭，是指成员范围包括购房人、配偶以及未成年子女）</view>
-      <view class="">
-        <radio-group class="radio-group" bindchange="radioBuyerChange" name="buyer_only">
-          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioBuyerItems}}" wx:key="value">
-            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
-          </label>
-        </radio-group>
-      </view>
-      <view class="weui-cells__title">转让房子的建筑面积是？</view>
-      <view class="">
-        <radio-group class="radio-group" bindchange="radioSizeChange" name="small_house">
-          <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioSizeItems}}" wx:key="value">
-            <radio class="radio-item" value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
-          </label>
-        </radio-group>
-      </view>
-      <view class="weui-cells__title">房屋交易价格是？</view>
+      
+      
+      <view class="weui-cells__title">房屋交易价格为</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
@@ -92,7 +96,7 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">转让的价格是否包含税费？</view>
+      <view class="weui-cells__title">交易价格是否包转让税费？</view>
       <view class="">
         <radio-group class="radio-group" bindchange="radioTaxedChange" name="taxed">
           <label class="radio {{ item.checked ? 'active' : ''}}" wx:for="{{radioTaxedItems}}" wx:key="value">
@@ -102,7 +106,7 @@
       </view>
       <view class="weui-cells__title"> </view>
       <view class="page__bd page__bd_spacing space-height">
-        <button class="weui-btn" formType="submit" >{{step}}</button>
+        <button class="weui-btn" formType="submit">{{step}}</button>
       </view>
     </view>
   </form>

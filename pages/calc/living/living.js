@@ -3,6 +3,8 @@ var util = require('../../../utils/util.js')
 Page({
   data: {
 
+    hidden: true,
+
     paramKeys: ["di", "li", "fcz_date", "qs_date",
       "qs_je", "seller_only", "buyer_only", "small_house", "jy_je", "taxed", "sgs"],
 
@@ -35,9 +37,17 @@ Page({
       { name: '大于90平方米', value: '1' }
     ],
     radioTaxedItems: [
-      { name: '转让包税费', value: '0', checked: true },
-      { name: '转让不包税费', value: '1' }
+      { name: '包', value: '0', checked: true },
+      { name: '不包', value: '1' }
     ],
+  },
+  onlytips: function(e){
+    this.setData({hidden: false})
+
+  },
+  confirm: function(e) {
+
+    this.setData({ hidden: true })
   },
   radioDistrictChange: function (e) {
     console.log('di发生change事件，携带值为：', e.detail.value);
@@ -55,7 +65,7 @@ Page({
   },
   bindFczDateChange: function (e) {
     if (this.data.seller_one == 0 && util.moreThanXYears(util.preDate(this.data.qs_date, e.detail.value), 5)) {
-      this.setData({ step: "完成", url: "../result/result" })
+      this.setData({ step: "计税", url: "../result/result" })
     } else {
       this.setData({ step: "下一步", url: "../living2/living2" })
     }
@@ -66,7 +76,7 @@ Page({
   bindQsDateChange: function (e) {
     // 选择了取得契税完税证的日期
     if (this.data.seller_one == 0 && util.moreThanXYears(util.preDate(this.data.fcz_date, e.detail.value), 5)) {
-      this.setData({ step: "完成", url: "../result/result" })
+      this.setData({ step: "计税", url: "../result/result" })
     } else {
       this.setData({ step: "下一步", url: "../living2/living2" })
     }
@@ -79,7 +89,7 @@ Page({
     // 选择了是否卖家唯一住房
 
     if (e.detail.value == 0 && util.moreThanXYears(util.preDate(this.data.fcz_date, this.data.qs_date), 5)) {
-      this.setData({ step: "完成", url: "../result/result" })
+      this.setData({ step: "计税", url: "../result/result" })
     } else {
       this.setData({ step: "下一步", url: "../living2/living2" })
     }

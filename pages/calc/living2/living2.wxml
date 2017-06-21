@@ -2,13 +2,13 @@
 <form bindsubmit="livingNext">
   <view class="page__bd">
 
-    <view class="weui-cells__title">转让的房子取得的发票上开票时间和金额是？</view>
+    <view class="weui-cells__title">房屋发票上</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
           <view class="weui-label">
               <image class="label-icon" src="/images/Calendar-icon.png"></image>
-              <text>日期</text></view>
+              <text>开票日期</text></view>
         </view>
         <view class="weui-cell__bd">
           <picker mode="date" value="{{fp_date}}" start="1949-10-01" end="2049-10-01" bindchange="bindFpDateChange">
@@ -20,7 +20,7 @@
         <view class="weui-cell__hd">
           <view class="weui-label">
               <image class="label-icon" src="/images/dollar-icon.png"></image>
-              <text>金额</text></view>
+              <text>发票金额</text></view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" name="fp_je" type="digit" placeholder="请输入金额" />

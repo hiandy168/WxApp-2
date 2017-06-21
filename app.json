@@ -10,33 +10,33 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#3188D8",
-    "navigationBarTitleText": "韶关二手房交易计税系统",
+    "navigationBarBackgroundColor": "#81D8CE",
+    "navigationBarTitleText": "二手房税费计算器",
     "navigationBarTextStyle":"light"
   },
   "tabBar": {
     "position": "bottom",
     "borderStyle": "white",
     "backgroundColor": "#f8f8f8",
-    "selectedColor": "#3188D8",
+    "selectedColor": "#81D8CE",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "介绍",
         "iconPath": "images/introduce.png",
-        "selectedIconPath": "images/introduceClick.png"
+        "selectedIconPath": "images/introduceTiffany.png"
       },
       {
         "pagePath": "pages/calc/living/living",
         "text": "住宅",
         "iconPath": "images/living.png",
-        "selectedIconPath": "images/livingClick.png"
+        "selectedIconPath": "images/livingTiffany.png"
       },
       {
         "pagePath": "pages/calc/noliving/noliving",
         "text": "非住宅",
         "iconPath": "images/noliving.png",
-        "selectedIconPath": "images/nolivingClick.png"
+        "selectedIconPath": "images/nolivingTiffany.png"
       }
     ]
   }
