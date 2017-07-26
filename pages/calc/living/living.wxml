@@ -82,13 +82,14 @@
       </view>
       
       
-      <view class="weui-cells__title">房屋交易价格为</view>
+      <!--<view class="weui-cells__title">房屋交易价格为</view>-->
+      <view class="weui-cells__title"></view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
             <view class="weui-label">
               <image class="label-icon" src="/images/dollar-icon.png"></image>
-              <text>金额</text>
+              <text>房屋交易价格</text>
             </view>
           </view>
           <view class="weui-cell__bd">

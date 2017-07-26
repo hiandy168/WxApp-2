@@ -10,7 +10,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#81D8CE",
+    "navigationBarBackgroundColor": "#2E8B57",
     "navigationBarTitleText": "二手房税费计算器",
     "navigationBarTextStyle":"light"
   },
@@ -18,7 +18,7 @@
     "position": "bottom",
     "borderStyle": "white",
     "backgroundColor": "#f8f8f8",
-    "selectedColor": "#81D8CE",
+    "selectedColor": "#2E8B57",
     "list": [
       {
         "pagePath": "pages/index/index",
